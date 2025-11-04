@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Customer extends Model
 {
@@ -36,8 +37,8 @@ class Customer extends Model
     /**
      * Get the activities for the customer.
      */
-    public function activities(): HasMany
+    public function activities(): MorphMany
     {
-        return $this->hasMany(Activity::class);
+        return $this->morphMany(Activity::class, 'activityable');
     }
 }

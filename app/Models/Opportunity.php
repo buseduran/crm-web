@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Opportunity extends Model
 {
@@ -39,8 +40,8 @@ class Opportunity extends Model
     /**
      * Get the activities for the opportunity.
      */
-    public function activities(): HasMany
+    public function activities(): MorphMany
     {
-        return $this->hasMany(Activity::class);
+        return $this->morphMany(Activity::class, 'activityable');
     }
 }

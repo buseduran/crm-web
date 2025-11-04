@@ -2,9 +2,10 @@
 
 namespace App\Filament\Admin\Resources\Users\Schemas;
 
-use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
+use Spatie\Permission\Models\Role;
 
 class UserForm
 {
@@ -21,7 +22,18 @@ class UserForm
                     ->required(),
                 TextInput::make('password')
                     ->password()
-                    ->required(),
+                    ->required()
+                    ->visibleOn('create'),
+                TextInput::make('password')
+                    ->password()
+                    ->dehydrated(fn ($state) => filled($state))
+                    ->visibleOn('edit'),
+                Select::make('roles')
+                    ->label('Roller')
+                    ->multiple()
+                    ->options(Role::pluck('name', 'id'))
+                    ->searchable()
+                    ->preload(),
             ]);
     }
 }

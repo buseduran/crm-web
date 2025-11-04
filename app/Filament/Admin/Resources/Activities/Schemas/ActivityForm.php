@@ -2,6 +2,8 @@
 
 namespace App\Filament\Admin\Resources\Activities\Schemas;
 
+use App\Models\Customer;
+use App\Models\Opportunity;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -14,25 +16,96 @@ class ActivityForm
     {
         return $schema
             ->components([
-                Select::make('customer_id')
-                    ->relationship('customer', 'name')
-                    ->required(),
-                Select::make('opportunity_id')
-                    ->relationship('opportunity', 'title'),
+                Select::make('activityable_type')
+                    ->label('İlişkili Tip')
+                    ->helperText('İlişkili tipi seçiniz.')
+                    ->options([
+                        Customer::class => 'Müşteri',
+                        Opportunity::class => 'Fırsat',
+                    ])
+                    ->required()
+                    ->live()
+                    ->native(false)
+                    ->afterStateUpdated(fn ($state, callable $set) => $set('activityable_id', null)),
+                Select::make('activityable_id')
+                    ->label('İlişkili Kayıt')
+                    ->helperText('İlişkili kayıtı seçiniz.')
+                    ->required()
+                    ->options(function (callable $get) {
+                        $type = $get('activityable_type');
+                        
+                        if (!$type) {
+                            return [];
+                        }
+                        
+                        if ($type === Customer::class) {
+                            return Customer::pluck('name', 'id')->toArray();
+                        }
+                        
+                        if ($type === Opportunity::class) {
+                            return Opportunity::pluck('title', 'id')->toArray();
+                        }
+                        
+                        return [];
+                    })
+                    ->searchable()
+                    ->preload()
+                    ->live()
+                    ->visible(fn (callable $get) => filled($get('activityable_type')))
+                    ->disabled(fn (callable $get) => !filled($get('activityable_type'))),
                 TextInput::make('title')
-                    ->required(),
+                    ->label('Başlık')
+                    ->required()
+                    ->maxLength(255),
                 Textarea::make('description')
-                    ->columnSpanFull(),
-                TextInput::make('type')
+                    ->label('Açıklama')
+                    ->columnSpanFull()
+                    ->rows(4),
+                Select::make('type')
+                    ->label('Tip')
+                    ->options([
+                        'call' => 'Telefon Araması',
+                        'email' => 'E-posta',
+                        'meeting' => 'Toplantı',
+                        'task' => 'Görev',
+                        'note' => 'Not',
+                        'other' => 'Diğer',
+                    ])
                     ->required()
                     ->default('note'),
-                TextInput::make('status')
+                Select::make('status')
+                    ->label('Durum')
+                    ->options([
+                        'pending' => 'Beklemede',
+                        'completed' => 'Tamamlandı',
+                        'cancelled' => 'İptal Edildi',
+                    ])
                     ->required()
                     ->default('pending'),
-                DateTimePicker::make('scheduled_at'),
-                DateTimePicker::make('completed_at'),
+                DateTimePicker::make('start_date')
+                    ->label('Başlangıç Tarihi')
+                    ->timezone('Europe/Istanbul')
+                    ->displayFormat('d.m.Y H:i')
+                    ->native(false),
+                DateTimePicker::make('end_date')
+                    ->label('Bitiş Tarihi')
+                    ->timezone('Europe/Istanbul')
+                    ->displayFormat('d.m.Y H:i')
+                    ->native(false),
+                DateTimePicker::make('scheduled_at')
+                    ->label('Planlanan Tarih')
+                    ->timezone('Europe/Istanbul')
+                    ->displayFormat('d.m.Y H:i')
+                    ->native(false),
+                DateTimePicker::make('completed_at')
+                    ->label('Tamamlanma Tarihi')
+                    ->timezone('Europe/Istanbul')
+                    ->displayFormat('d.m.Y H:i')
+                    ->native(false),
                 Textarea::make('outcome')
-                    ->columnSpanFull(),
+                    ->label('Sonuç')
+                    ->columnSpanFull()
+                    ->rows(3),
             ]);
     }
 }

@@ -15,24 +15,62 @@ class OpportunityForm
         return $schema
             ->components([
                 Select::make('customer_id')
+                    ->label('Müşteri')
                     ->relationship('customer', 'name')
-                    ->required(),
+                    ->required()
+                    ->searchable()
+                    ->preload(),
                 TextInput::make('title')
-                    ->required(),
+                    ->label('Başlık')
+                    ->required()
+                    ->maxLength(255),
                 Textarea::make('description')
-                    ->columnSpanFull(),
+                    ->label('Açıklama')
+                    ->columnSpanFull()
+                    ->rows(4),
                 TextInput::make('value')
-                    ->numeric(),
-                TextInput::make('stage')
+                    ->label('Değer')
+                    ->numeric()
+                    ->prefix('₺')
+                    ->step(0.01),
+                Select::make('stage')
+                    ->label('Aşama')
+                    ->options([
+                        'prospecting' => 'Potansiyel Müşteri',
+                        'qualification' => 'Nitelendirme',
+                        'proposal' => 'Teklif',
+                        'negotiation' => 'Müzakereler',
+                        'closed-won' => 'Kazanıldı',
+                        'closed-lost' => 'Kaybedildi',
+                    ])
                     ->required()
-                    ->default('prospecting'),
-                TextInput::make('priority')
+                    ->default('prospecting')
+                    ->native(false),
+                Select::make('priority')
+                    ->label('Öncelik')
+                    ->options([
+                        'low' => 'Düşük',
+                        'medium' => 'Orta',
+                        'high' => 'Yüksek',
+                        'urgent' => 'Acil',
+                    ])
                     ->required()
-                    ->default('medium'),
-                DatePicker::make('expected_close_date'),
-                DatePicker::make('actual_close_date'),
+                    ->default('medium')
+                    ->native(false),
+                DatePicker::make('expected_close_date')
+                    ->label('Beklenen Kapanış Tarihi')
+                    ->timezone('Europe/Istanbul')
+                    ->displayFormat('d.m.Y')
+                    ->native(false),
+                DatePicker::make('actual_close_date')
+                    ->label('Gerçek Kapanış Tarihi')
+                    ->timezone('Europe/Istanbul')
+                    ->displayFormat('d.m.Y')
+                    ->native(false),
                 Textarea::make('notes')
-                    ->columnSpanFull(),
+                    ->label('Notlar')
+                    ->columnSpanFull()
+                    ->rows(3),
             ]);
     }
 }

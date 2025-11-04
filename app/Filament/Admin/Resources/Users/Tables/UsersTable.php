@@ -21,6 +21,11 @@ class UsersTable
                 TextColumn::make('email')
                     ->label(label: 'E-posta Adresi')
                     ->searchable(),
+                TextColumn::make('roles.name')
+                    ->label(label: 'Roller')
+                    ->badge()
+                    ->separator(',')
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->label(label: 'Oluşturulma Tarihi')
                     ->dateTime('d.m.Y H:i:s')->timezone('Europe/Istanbul')
