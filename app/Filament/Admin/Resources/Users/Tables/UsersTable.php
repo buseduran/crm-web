@@ -21,6 +21,10 @@ class UsersTable
                 TextColumn::make('email')
                     ->label(label: 'E-posta Adresi')
                     ->searchable(),
+                TextColumn::make('card_string')
+                    ->label(label: 'Kart String')
+                    ->searchable()
+                    ->toggleable(),
                 TextColumn::make('roles.name')
                     ->label(label: 'Roller')
                     ->badge()

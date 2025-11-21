@@ -28,6 +28,10 @@ class UserForm
                     ->password()
                     ->dehydrated(fn ($state) => filled($state))
                     ->visibleOn('edit'),
+                TextInput::make('card_string')
+                    ->label('Kart String')
+                    ->unique(ignoreRecord: true)
+                    ->maxLength(255),
                 Select::make('roles')
                     ->label('Roller')
                     ->multiple()

@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17d302f2-04e4-448d-80ff-7fbe5b5ba399" name="Changes" comment="" />
+    <list default="true" id="17d302f2-04e4-448d-80ff-7fbe5b5ba399" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filament/Admin/Resources/Users/Schemas/UserForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filament/Admin/Resources/Users/Schemas/UserForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filament/Admin/Resources/Users/Tables/UsersTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filament/Admin/Resources/Users/Tables/UsersTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "buseduran"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/buseduran/crm-web.git",
+    "accountId": "d2af54a9-0063-41b7-bc7b-fdc962217190"
+  }
+}]]></component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.4.12/bin/php">
     <include_path>
       <path value="$PROJECT_DIR$/crm/vendor/psr/event-dispatcher" />
@@ -336,6 +354,8 @@
       <workItem from="1760864383137" duration="2185000" />
       <workItem from="1761300393514" duration="1675000" />
       <workItem from="1761415912720" duration="2545000" />
+      <workItem from="1762283794325" duration="623000" />
+      <workItem from="1763238161985" duration="661000" />
     </task>
     <servers />
   </component>
