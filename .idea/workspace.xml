@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17d302f2-04e4-448d-80ff-7fbe5b5ba399" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/filament/filament/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/filament/filament/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filament/forms/components/checkbox-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filament/forms/components/checkbox-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filament/forms/components/code-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filament/forms/components/code-editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filament/forms/components/date-time-picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filament/forms/components/date-time-picker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filament/forms/components/file-upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filament/forms/components/file-upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filament/forms/components/rich-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filament/forms/components/rich-editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filament/forms/components/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filament/forms/components/select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filament/tables/components/columns/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filament/tables/components/columns/select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filament/tables/tables.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filament/tables/tables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/filament/widgets/components/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/filament/widgets/components/chart.js" afterDir="false" />
-    </list>
+    <list default="true" id="17d302f2-04e4-448d-80ff-7fbe5b5ba399" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -373,6 +352,7 @@
       <workItem from="1762283794325" duration="623000" />
       <workItem from="1763238161985" duration="661000" />
       <workItem from="1763982945010" duration="2326000" />
+      <workItem from="1764079302782" duration="638000" />
     </task>
     <servers />
   </component>

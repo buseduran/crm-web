@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CardReadLogSeeder::class,
+            OpportunitySeeder::class,
+            AttendanceSeeder::class,
         ]);
     }
 }

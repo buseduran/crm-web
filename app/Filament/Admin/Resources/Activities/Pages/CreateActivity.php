@@ -11,9 +11,6 @@ class CreateActivity extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        // Polimorfik ilişki için activityable_type ve activityable_id zaten form'da var
-        // Burada ekstra bir işlem yapmamıza gerek yok
-        
         return $data;
     }
 }
